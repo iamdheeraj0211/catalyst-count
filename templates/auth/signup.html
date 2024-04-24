@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>REGISTRATION FORM</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container jumbotron">
+    <center>
+        <h2 style="margin-top:-22px">Sign Up</h2>
+        <p>it's quick and easy.</p><br></center>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+       <center> <input type="submit" value="SIGN UP" class="btn btn-outline-success"></center>
+    </form>
+</div>
+{% endblock %}

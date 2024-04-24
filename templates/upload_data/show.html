@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>SHOW DATA</title>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">File ID</th>
+      <th scope="col">DOCUMENT</th>
+      <th scope="col">UPLOADED BY</th>
+      <th scope="col">UPLOADED AT</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for ord in obj %}
+    <tr>
+
+      <td>{{ord.id}}</td>
+      {% if ord.document %}
+        <td><a>{{ ord.document.url }}</a></td>
+      {% else %}
+        <td>{{ ord.document }}</td> 
+      {% endif %}
+
+      <td>{{ord.created_by}}</td>
+      <td>{{ord.created_at}}</td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}
